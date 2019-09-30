@@ -129,3 +129,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
 }
+
+OPEN_WEATHER_MAP_KEY = 'e18e2d10b38c8098c566449e325be58f'
+OPEN_WEATHER_MAP_URL = 'https://api.openweathermap.org/data/2.5/weather'

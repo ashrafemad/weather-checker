@@ -32,3 +32,7 @@ class UserLoginSerializer(serializers.Serializer):
         if user:
             return user
         raise ValidationError({'error': 'User not found'})
+
+
+class CitySerializer(serializers.Serializer):
+    city_name = serializers.CharField(required=True)
