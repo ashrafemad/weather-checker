@@ -1,5 +1,7 @@
+from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from rest_framework import serializers
+from rest_framework.exceptions import ValidationError
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -17,3 +19,16 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('username', 'email', 'password')
+
+
+class UserLoginSerializer(serializers.Serializer):
+    username = serializers.CharField(required=True)
+    password = serializers.CharField(required=True)
+
+    def validate(self, attrs):
+        username = attrs.get('username', None)
+        password = attrs.get('username', None)
+        user = authenticate(username=username, password=password)
+        if user:
+            return user
+        raise ValidationError({'error': 'User not found'})
