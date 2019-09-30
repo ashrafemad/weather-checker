@@ -18,6 +18,7 @@ class CreateUserView(CreateAPIView):
         :parameter username [required]
         :parameter email [required]
         :parameter password [required]
+        :returns user data (email, username)
     """
 
     model = User
@@ -30,6 +31,7 @@ class LoginView(GenericAPIView):
         User Login
         :parameter username [required]
         :parameter password [required]
+        :returns user data (email, username)
     """
 
     http_method_names = ['post']
@@ -47,6 +49,7 @@ class WeatherDetailsView(GenericAPIView):
     """
         Weather information
         :parameter city_name [required]
+        :returns on success {summary: one word describing weather state, details: more detailed info about weather}
     """
 
     http_method_names = ['post']
