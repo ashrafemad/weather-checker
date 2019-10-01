@@ -28,5 +28,5 @@
   
   `api/v1/register`
   
-  `api/v1/weather`
+  `api/v1/weather` > *You must login to use this endpoint*
 
