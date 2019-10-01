@@ -1,5 +1,5 @@
 # weather-checker
-  Show weather information for user selected city
+  Show weather information for user selected city through API and HTML pages
 
 # Prerequisite
   Python 3.7
