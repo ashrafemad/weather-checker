@@ -136,3 +136,5 @@ OPEN_WEATHER_MAP_URL = 'https://api.openweathermap.org/data/2.5/weather'
 
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/login/'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
