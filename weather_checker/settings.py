@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import dj_database_url
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -77,13 +79,12 @@ WSGI_APPLICATION = 'weather_checker.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
+DATABASES = {
+    'default': dj_database_url.config(
+        default=dj_database_url.config('postgres://goelftphclarui:341b5a37cdb0345fab7d829335350ae6cb3a997285b9f7477fc4193c4fc499e0@ec2-46-137-187-23.eu-west-1.compute.amazonaws.com:5432/dauosd6tf5h2hc')
+    )
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

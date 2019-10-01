@@ -6,3 +6,4 @@ django-rest-swagger==2.2.0
 requests==2.22.0
 whitenoise==3.3.1
 gunicorn==19.9.0
+dj-database-url==0.5.0

@@ -7,7 +7,7 @@
   SQLite installed https://www.sqlite.org/index.html
 
 # Make it work (Locally)
-   Create a file inside weather_checker called `local_settings.py` and add `ALLOWED_HOSTS = ['*']`
+   Create a file inside weather_checker called `local_settings.py` and add `ALLOWED_HOSTS = ['*']` and Your database configurations
 
   `pip install -r requirements.txt`
   
