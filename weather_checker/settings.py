@@ -25,7 +25,7 @@ SECRET_KEY = '+3jsny9k5)1z+ixpqf+$%+0kaze%bt)-p2f+y1i^4(y$ip)1h^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['weather-checker-ash.herokuapp.com']
 
 
 # Application definition
