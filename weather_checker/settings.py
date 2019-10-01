@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_swagger',
-    'api'
+    'api',
+    'website'
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,6 @@ REST_FRAMEWORK = {
 
 OPEN_WEATHER_MAP_KEY = 'e18e2d10b38c8098c566449e325be58f'
 OPEN_WEATHER_MAP_URL = 'https://api.openweathermap.org/data/2.5/weather'
+
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/login/'

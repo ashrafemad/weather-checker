@@ -1,7 +1,3 @@
-import json
-
-import requests
-from django.conf import settings
 from django.contrib.auth import login
 from django.contrib.auth.models import User
 from rest_framework import status
@@ -10,6 +6,7 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 
 from api.serializers import UserSerializer, UserLoginSerializer, CitySerializer
+from api.utils import get_weather_data
 
 
 class CreateUserView(CreateAPIView):
@@ -59,13 +56,8 @@ class WeatherDetailsView(GenericAPIView):
     def post(self, request):
         data = self.serializer_class(data=request.data)
         if data.is_valid(raise_exception=True):
-            response = requests.get(settings.OPEN_WEATHER_MAP_URL,
-                                    params={'q': data.validated_data['city_name'],
-                                            'appid': settings.OPEN_WEATHER_MAP_KEY})
-            json_response = json.loads(response.text)
-            if response.status_code == 200:
-                weather_details = {'summary': json_response['weather'][0]['main'],
-                           'details': json_response['weather'][0]['description']}
-                return Response(weather_details,  status=200)
-            return Response(data={'error': json_response['message']}, status=json_response['cod'])
+            response = get_weather_data(city_name=data.validated_data['city_name'])
+            if response.get('details', None) and response.get('status') == 200:
+                return Response(response['details'], status=200)
+            return Response(data={'error': response['error']}, status=response['status'])
         return Response({'error': 'Please enter correct city name'}, status=status.HTTP_400_BAD_REQUEST)

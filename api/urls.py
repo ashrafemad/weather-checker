@@ -7,7 +7,7 @@ schema_view = get_swagger_view(title='Weather Checker API')
 
 urlpatterns = [
     path('docs/', schema_view),
-    path('register/', CreateUserView.as_view(), name='register'),
-    path('login/', LoginView.as_view(), name='login'),
-    path('weather/', WeatherDetailsView.as_view(), name='login'),
+    path('register/', CreateUserView.as_view(), name='api-register'),
+    path('login/', LoginView.as_view(), name='api-login'),
+    path('weather/', WeatherDetailsView.as_view(), name='api-weather-details'),
 ]
