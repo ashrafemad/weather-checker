@@ -1,5 +1,5 @@
 # weather-checker
-  Show weather information for user selected city
+  Show weather information for user selected city through API and HTML pages
 
 # Prerequisite
   Python 3.7
@@ -24,9 +24,11 @@
 # API Documentation
   You can find all Endpoints here: `https://weather-checker-ash.herokuapp.com/api/v1/docs`
   
+  Powered by Swagger https://django-rest-swagger.readthedocs.io/en/latest/
+  
   `api/v1/login`
   
   `api/v1/register`
   
-  `api/v1/weather`
+  `api/v1/weather` > *You must login to use this endpoint*
 
