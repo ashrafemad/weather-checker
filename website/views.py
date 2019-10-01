@@ -1,10 +1,7 @@
-import requests
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
-from django.http import JsonResponse
 from django.shortcuts import redirect, render
-from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.views import View
 
@@ -13,6 +10,7 @@ from api.utils import get_weather_data
 
 class UserLoginView(LoginView):
     template_name = 'website/login.html'
+    extra_context = {'title': 'Weather Checker - Login'}
 
 
 class LogoutView(View):
